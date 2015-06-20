@@ -5,10 +5,10 @@
     android:weightSum="1">
 
     <Button
-        android:layout_width="311dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Hola Mundo"
         android:id="@+id/button"
-        android:layout_weight="0.15"
+        android:layout_weight="0.08"
         android:textSize="50dp" />
 </LinearLayout>
