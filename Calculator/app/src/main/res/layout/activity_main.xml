@@ -241,7 +241,7 @@
 
                 <Button
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
                     android:layout_weight="1"
                     android:id="@+id/divideButton"
                     android:text="/"
@@ -251,7 +251,7 @@
 
                 <Button
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
                     android:layout_weight="1"
                     android:id="@+id/multiplyButton"
                     android:text="X"
@@ -261,7 +261,7 @@
 
                 <Button
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
                     android:layout_weight="1"
                     android:id="@+id/minusButton"
                     android:text="--"
@@ -271,7 +271,7 @@
 
                 <Button
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
                     android:layout_weight="1"
                     android:id="@+id/addButton"
                     android:text="+"
@@ -281,7 +281,7 @@
 
                 <Button
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
                     android:layout_weight="1"
                     android:id="@+id/equalButton"
                     android:text="="
