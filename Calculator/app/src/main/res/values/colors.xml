@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="digit_background_color">#795548</color>
+    <color name="digit_text_color">#FFFFFF</color>
+
+
+    <color name="operator_background_color">#FFA726</color>
+    <color name="operator_text_color">#FFFFFF</color>
+
+    <color name="other_background_color">#A1887F</color>
+    <color name="other_text_color">#FFFFFF</color>
+
+    <color name="display_background_color">#212121</color>
+    <color name="display_text_color">#FFFFFF</color>
+
+</resources>
