@@ -37,12 +37,15 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         findViewById(R.id.digit7Button).setOnClickListener(this);
         findViewById(R.id.digit8Button).setOnClickListener(this);
         findViewById(R.id.digit9Button).setOnClickListener(this);
+        // Decimal
+        findViewById(R.id.pointButton).setOnClickListener(this);
 
         // Clear Behavior
         findViewById(R.id.clearButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 displayTextView.setText("0");
+                startInputDigit = false;
             }
         });
 
