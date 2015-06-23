@@ -1,6 +1,5 @@
 package com.xiobit.calculator;
 
-import android.nfc.Tag;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,12 +9,14 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
-
 public class MainActivity extends ActionBarActivity implements View.OnClickListener {
 
     private static final String TAG = "Calculator";
 
     TextView displayTextView;
+    OperatorEnum operationSelected;
+    Double lastValue;
+    Boolean startInputDigit = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,15 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 displayTextView.setText("0");
             }
         });
+
+        // Basic Operations: /, x, -, +
+        findViewById(R.id.divideButton).setOnClickListener(operationListener);
+        findViewById(R.id.multiplyButton).setOnClickListener(operationListener);
+        findViewById(R.id.minusButton).setOnClickListener(operationListener);
+        findViewById(R.id.addButton).setOnClickListener(operationListener);
+
+        // Equal Result
+        findViewById(R.id.equalButton).setOnClickListener(equalListener);
 
         // Sin(x) function
         findViewById(R.id.sinButton).setOnClickListener(new View.OnClickListener() {
@@ -90,15 +100,74 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
 
-    // OnClickListener
+
+    //Global On Click listener for all operations
+    final View.OnClickListener operationListener = new View.OnClickListener() {
+        public void onClick(final View v) {
+
+            lastValue = Double.valueOf(displayTextView.getText().toString());
+
+            switch(v.getId()) {
+                case R.id.divideButton:
+                    operationSelected = OperatorEnum.DIVIDE;
+                    break;
+                case R.id.multiplyButton:
+                    operationSelected = OperatorEnum.MULTIPLY;
+                    break;
+                case R.id.addButton:
+                    operationSelected = OperatorEnum.ADD;
+                    break;
+                case R.id.minusButton:
+                    operationSelected = OperatorEnum.MINUS;
+                    break;
+
+            }
+
+            startInputDigit = false;
+        }
+    };
+
+    //Global On Click Listener for equal result
+    final View.OnClickListener equalListener = new View.OnClickListener() {
+        public void onClick(final View v) {
+            Double currentValue = Double.valueOf(displayTextView.getText().toString());
+            Double result = null;
+
+            switch(operationSelected) {
+                case DIVIDE:
+                    result = lastValue / currentValue;
+                    break;
+                case MULTIPLY:
+                    result = lastValue * currentValue;
+                    break;
+                case ADD:
+                    result = lastValue + currentValue;
+                    break;
+                case MINUS:
+                    result = lastValue - currentValue;
+                    break;
+            }
+
+            displayTextView.setText( Double.toString(result) );
+        }
+    };
+
+
+
+    // OnClickListener for all Digits
     @Override
     public void onClick(View v) {
         Button digitButton = (Button) v;
-        Log.i(TAG, "digit pressed : " + digitButton.getText());
+        // Log.i(TAG, "digit pressed : " + digitButton.getText());
 
-        displayTextView.setText( displayTextView.getText() + digitButton.getText().toString() );
-
-
+        if ( startInputDigit ) {
+            displayTextView.setText( displayTextView.getText() + digitButton.getText().toString() );
+        } else {
+            displayTextView.setText( digitButton.getText().toString() );
+            startInputDigit = true;
+        }
 
     }
+
+
 }
