@@ -40,7 +40,7 @@
                 android:orientation="vertical"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_weight="0.7"
+                android:layout_weight="0.75"
                 android:weightSum="1">
 
                 <LinearLayout
@@ -236,11 +236,11 @@
                 android:orientation="vertical"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_weight="0.3"
+                android:layout_weight="0.25"
                 android:weightSum="5">
 
                 <Button
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:id="@+id/divideButton"
@@ -250,7 +250,7 @@
                     android:background="@color/operator_background_color" />
 
                 <Button
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:id="@+id/multiplyButton"
@@ -260,7 +260,7 @@
                     android:textColor="@color/operator_text_color" />
 
                 <Button
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:id="@+id/minusButton"
@@ -270,7 +270,7 @@
                     android:textColor="@color/operator_text_color" />
 
                 <Button
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:id="@+id/addButton"
@@ -280,7 +280,7 @@
                     android:textColor="@color/operator_text_color" />
 
                 <Button
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:id="@+id/equalButton"
