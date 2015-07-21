@@ -46,8 +46,15 @@ public class GameService {
 
     }
 
+    public void generateSecretWord() {
 
 
+    }
+
+    public void hideWord() {
+
+
+    }
 
 
 
