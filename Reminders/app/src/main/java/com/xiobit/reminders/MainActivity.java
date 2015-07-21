@@ -3,6 +3,8 @@ package com.xiobit.reminders;
 import android.nfc.Tag;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,6 +23,10 @@ public class MainActivity extends ActionBarActivity {
 
     private static final String TAG = "Reminder";
 
+    private RecyclerView todoRecyclerView;
+    private RecyclerView.Adapter todoAdapter;
+    private RecyclerView.LayoutManager todoLayoutManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,12 +41,21 @@ public class MainActivity extends ActionBarActivity {
 
         Todo[] todos = results.toArray(new Todo[results.size()]);
 
+
+        // RecyclerView
+//        todoRecyclerView = (RecyclerView) findViewById(R.id.todoRecyclerView);
+//        todoRecyclerView.setHasFixedSize(true);
+//
+//        todoLayoutManager = new LinearLayoutManager(this);
+//        todoRecyclerView.setLayoutManager(todoLayoutManager);
+//
+//        todoAdapter = new TodoArrayAdapter(todos);
+//        todoRecyclerView.setAdapter(todoAdapter);
+
+
         // Show List
         ListView listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(new TodoArrayAdapter(this, todos));
-
-
-
     }
 
     @Override
